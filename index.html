@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nail Salon - Premium Experience</title>
+    <style>
+        /* VARIABLES DE COLOR (Tu paleta solicitada) */
+        :root {
+            --negro-mate: #121212;
+            --negro-tarjeta: #1a1a1a;
+            --gris-oscuro: #2d2d2d;
+            --gris-claro: #a0a0a0;
+            --fucsia-oscuro: #880e4f;
+            --orquidea: #da70d6;
+            --orquidea-brillante: #ff85ff;
+            --texto-blanco: #f5f5f5;
+        }
+
+        /* ESTILOS GENERALES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--negro-mate);
+            color: var(--texto-blanco);
+            line-height: 1.6;
+        }
+
+        /* BARRA DE NAVEGACIÓN */
+        header {
+            background-color: var(--negro-tarjeta);
+            border-bottom: 2px solid var(--fucsia-oscuro);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container img {
+            height: 60px; /* Ajusta según el tamaño de tu logo */
+            width: auto;
+            display: block;
+        }
+
+        /* Si aún no pones la imagen, este texto se verá bien */
+        .logo-placeholder {
+            color: var(--orquidea);
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: var(--texto-blanco);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--orquidea);
+        }
+
+        /* SECCIÓN HERO (BIENVENIDA) */
+        .hero {
+            background: linear-gradient(135deg, var(--negro-mate) 30%, var(--fucsia-oscuro) 100%);
+            padding: 100px 5%;
+            text-align: center;
+            border-bottom: 1px solid var(--gris-oscuro);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--texto-blanco);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--orquidea);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--gris-claro);
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        .btn-principal {
+            background-color: var(--fucsia-oscuro);
+            color: var(--texto-blanco);
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            border: 1px solid var(--orquidea);
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-principal:hover {
+            background-color: var(--orquidea);
+            color: var(--negro-mate);
+            box-shadow: 0 0 15px var(--orquidea-brillante);
+        }
+
+        /* SECCIÓN SERVICIOS */
+        .servicios {
+            padding: 80px 5%;
+            background-color: var(--negro-mate);
+        }
+
+        .titulo-seccion {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            color: var(--texto-blanco);
+            position: relative;
+        }
+
+        .titulo-seccion::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--orquidea);
+            margin: 10px auto 0 auto;
+        }
+
+        .grid-servicios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .tarjeta-servicio {
+            background-color: var(--negro-tarjeta);
+            border: 1px solid var(--gris-oscuro);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .tarjeta-servicio:hover {
+            transform: translateY(-5px);
+            border-color: var(--fucsia-oscuro);
+        }
+
+        .tarjeta-servicio h3 {
+            color: var(--orquidea);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .tarjeta-servicio p {
+            color: var(--gris-claro);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .precio {
+            font-size: 1.3rem;
+            color: var(--texto-blanco);
+            font-weight: bold;
+        }
+
+        /* FOOTER (PIE DE PÁGINA) */
+        footer {
+            background-color: #0b0b0b;
+            border-top: 1px solid var(--gris-oscuro);
+            padding: 40px 5%;
+            text-align: center;
+            color: var(--gris-claro);
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        .contacto-info {
+            color: var(--orquidea);
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ENCABEZADO Y LOGO -->
+    <header>
+        <div class="logo-container">
+            <!-- REEMPLAZA "tu-logo.png" CON EL NOMBRE DE TU ARCHIVO DE LOGO -->
+           <img src="tu-logo.png" alt="Logo Nail Salon" onerror="this.style.display='none'; document.getElementById('logo-text').style.display='block';">
+            <span id="logo-text" class="logo-placeholder" style="display:none;">NAILS SALON</span>
+        </div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- SECCIÓN DE BIENVENIDA -->
+    <section class="hero" id="inicio">
+        <h1>Diseño de Uñas <span>Premium</span></h1>
+        <p>Un espacio exclusivo diseñado para consentirte. Estilo, elegancia y una duración impecable en un ambiente mate y sofisticado.</p>
+        <a href="https://wa.me/TU_NUMERO_AQUI" class="btn-principal" target="_blank">Agendar Cita</a>
+    </section>
+
+    <!-- SECCIÓN DE SERVICIOS -->
+    <section class="servicios" id="servicios">
+        <h2 class="titulo-seccion">Nuestros Servicios</h2>
+        
+        <div class="grid-servicios">
+            <!-- Servicio 1 -->
+            <div class="tarjeta-servicio">
+                <h3>Uñas Sculpturales</h3>
+                <p>Extensión y estructura perfecta adaptada a la forma de tus manos con acabados mate o brillante.</p>
+                <div class="precio">$XX.XX</div>
+            </div>
+
+            <!-- Servicio 2 -->
+            <div class="tarjeta-servicio">
+                <h3>Gel Semi-Permanente</h3>
+                <p>Esmaltado de alta durabilidad con una amplia gama de tonos fucsia, orquídea y efectos especiales.</p>
+                <div class="precio">$XX.XX</div>
+            </div>
+
+            <!-- Servicio 3 -->
+            <div class="tarjeta-servicio">
+                <h3>Nail Art Premium</h3>
+                <p>Diseños a mano alzada, cristales, efectos holográficos y encapsulados totalmente personalizados.</p>
+                <div class="precio">$XX.XX</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA Y CONTACTO -->
+    <footer id="contacto">
+        <p>&copy; 2026 Tu Local de Uñas. Todos los derechos reservados.</p>
+        <p>Encuéntranos en tu dirección local | Horarios: Lun - Sáb: 10:00 AM - 8:00 PM</p>
+        <div class="contacto-info">
+            WhatsApp: +52 XXX XXX XXXX | Instagram: @TuLocalDeUnas
+        </div>
+    </footer>
+
+</body>
+</html>
